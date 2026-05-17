@@ -5,7 +5,7 @@ import { selectWishlistCount } from "../../store/slices/wishlistSlice.js";
 
 import { useState } from "react";
 
-import DropDown from "./DropDown.jsx";
+import DropDown from "../Components/Dropdown.jsx";
 import MobileDropdownContent from "./MobileDropdownContent.jsx";
 
 import { NavLink, Link, useNavigate } from "react-router-dom";
@@ -123,7 +123,11 @@ function MainNav() {
                   >
                     <span>{section.name}</span>
                     <IoChevronDown
-                      className={`${style.chevron} ${activeDropdown === section.name ? style.chevronActive : ""}`}
+                      className={`${style.chevron} ${
+                        activeDropdown === section.name
+                          ? style.chevronActive
+                          : ""
+                      }`}
                     />
                   </button>
                   {activeDropdown === section.name && (
