@@ -1,0 +1,406 @@
+.section {
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 83.125rem;
+  max-width: 100%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.leftContainer {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9ff;
+  padding: 2rem;
+}
+.inputGroup {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.inputError {
+  border-color: #dc2626 !important;
+}
+
+.inputError:focus {
+  border-color: #dc2626 !important;
+  outline-color: #dc2626 !important;
+}
+
+.fieldError {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.error {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  text-align: center;
+}
+.imgWrapper {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.rightContainer {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 4rem;
+}
+
+.loginHeading {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+}
+
+.loginParagraph {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  width: 100%;
+  max-width: 370px;
+}
+
+.input {
+  width: 100%;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #777;
+  margin-bottom: 2rem;
+  padding: 0.5rem 0;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.input:focus {
+  border-bottom: 2px solid #5171ff;
+}
+
+.btn {
+  font-size: 16px;
+  color: white;
+  background-color: #5171ff;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+  width: 100%;
+  padding: 1rem 0;
+  height: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn:hover {
+  background-color: #3957d1;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btngoogle {
+  margin-top: 1rem;
+  font-size: 16px;
+  color: black;
+  background-color: #ffffff;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  height: 3.5rem;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.btngoogle:hover {
+  background-color: #f5f5f5;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.googleIcon {
+  font-size: 24px;
+}
+
+.alreadyParagraph {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.alreadyParagraph span {
+  color: #5171ff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.alreadyParagraph span:hover {
+  color: #3957d1;
+  text-decoration: underline;
+}
+
+.forgetBtn {
+  font-size: 14px;
+  color: #5171ff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  background: none;
+  text-align: left;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.forgetBtn:hover {
+  color: #3957d1;
+  text-decoration: underline;
+}
+
+.orContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.or {
+  color: #a6a0a0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.line {
+  height: 1px;
+  flex: 1;
+  background-color: #e0e0e0;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Large Desktop */
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .rightContainer {
+    padding: 2.5rem 3rem;
+  }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+  .leftContainer {
+    width: 50%;
+  }
+
+  .rightContainer {
+    width: 50%;
+    padding: 2rem;
+  }
+
+  .loginHeading {
+    font-size: 1.75rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .leftContainer {
+    width: 100%;
+    min-height: 250px;
+    max-height: 300px;
+  }
+
+  .imgWrapper {
+    max-width: 400px;
+  }
+
+  .rightContainer {
+    width: 100%;
+    padding: 2rem 3rem;
+    align-items: center;
+  }
+
+  .form {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .loginHeading {
+    text-align: center;
+  }
+
+  .loginParagraph {
+    text-align: center;
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 768px) {
+  .leftContainer {
+    min-height: 200px;
+    max-height: 250px;
+    padding: 1rem;
+  }
+
+  .imgWrapper {
+    max-width: 300px;
+  }
+
+  .rightContainer {
+    padding: 1.5rem 2rem;
+  }
+
+  .loginHeading {
+    font-size: 1.5rem;
+  }
+
+  .loginParagraph {
+    font-size: 14px;
+  }
+
+  .form {
+    padding: 1.5rem 0;
+  }
+
+  .input {
+    margin-bottom: 1.5rem;
+    font-size: 15px;
+  }
+
+  .btn,
+  .btngoogle {
+    height: 3rem;
+    font-size: 15px;
+  }
+
+  .googleIcon {
+    font-size: 22px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .leftContainer {
+    min-height: 180px;
+    max-height: 220px;
+  }
+
+  .imgWrapper {
+    max-width: 250px;
+  }
+
+  .rightContainer {
+    padding: 1.5rem;
+  }
+
+  .loginHeading {
+    font-size: 1.35rem;
+  }
+
+  .form {
+    padding: 1rem 0;
+  }
+
+  .input {
+    margin-bottom: 1.25rem;
+    font-size: 14px;
+    height: 30px;
+  }
+
+  .btn,
+  .btngoogle {
+    height: 2.75rem;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+
+  .googleIcon {
+    font-size: 20px;
+  }
+
+  .alreadyParagraph {
+    font-size: 13px;
+  }
+
+  .forgetBtn,
+  .or {
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile - Hide image */
+@media (max-width: 480px) {
+  .leftContainer {
+    display: none;
+  }
+
+  .rightContainer {
+    min-height: 100vh;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+  }
+}

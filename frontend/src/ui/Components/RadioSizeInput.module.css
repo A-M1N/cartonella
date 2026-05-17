@@ -1,0 +1,84 @@
+.input {
+  display: none;
+}
+
+.sizeOption {
+  position: relative;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.labelTitle {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  line-height: 20px;
+}
+
+.sizeSquare {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid rgba(86, 99, 118, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  padding: 10px 6px;
+  transition: all 0.2s ease;
+}
+
+.sizeSquare:hover {
+  border-color: #5171ff;
+}
+
+.input:checked + .sizeSquare {
+  color: white;
+  background-color: #5171ff;
+  border: none;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .container {
+    margin: 1.5rem 0;
+    gap: 0.75rem;
+  }
+
+  .labelTitle {
+    font-size: 16px;
+  }
+
+  .sizeSquare {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin: 1rem 0;
+  }
+
+  .labelTitle {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .sizeSquare {
+    width: 40px;
+    height: 40px;
+  }
+}

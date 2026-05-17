@@ -1,0 +1,88 @@
+.breadcrumbsContainer {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+  width: 83.125rem;
+  max-width: 100%;
+  margin: 0.5rem auto;
+  padding: 0.5rem 2rem;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.arrow {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  stroke: #5170ff;
+}
+
+.label {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.label:hover {
+  color: #5170ff;
+}
+
+.lastLabel {
+  color: #a2a6b0;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+/* ============ RESPONSIVE STYLES ============ */
+
+@media (max-width: 1400px) {
+  .list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .listItem {
+    gap: 0.5rem;
+  }
+
+  .label,
+  .lastLabel {
+    font-size: 12px;
+  }
+
+  .arrow {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .list {
+    padding: 0.5rem 1rem;
+  }
+
+  .label,
+  .lastLabel {
+    font-size: 11px;
+  }
+}

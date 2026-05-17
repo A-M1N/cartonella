@@ -1,0 +1,138 @@
+/* ============================================
+   CATEGORY CARD - Mobile First
+   ============================================ */
+
+.cardContainer {
+  width: 100%;
+  aspect-ratio: 1.15 / 1; /* Maintains proportion */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.cardContainer:hover {
+  background-color: #5170ff;
+  border-color: #5170ff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(81, 112, 255, 0.3);
+}
+
+.cardContainer:hover .title {
+  color: white;
+}
+
+.cardContainer:active {
+  transform: translateY(-2px);
+}
+
+.imgWrapper {
+  width: 40px;
+  height: 40px;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  color: var(--icon-color, #222);
+  transition: color 0.25s ease;
+}
+
+.cardContainer:hover .svg {
+  color: #fff;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.25s ease;
+}
+
+/* ============================================
+   SMALL MOBILE (480px and up)
+   ============================================ */
+
+@media (min-width: 480px) {
+  .cardContainer {
+    gap: 0.625rem;
+  }
+
+  .imgWrapper {
+    width: 44px;
+    height: 44px;
+  }
+
+  .title {
+    font-size: 13px;
+  }
+}
+
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .cardContainer {
+    gap: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .imgWrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}
+
+/* ============================================
+   DESKTOP (1024px and up)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .cardContainer {
+    gap: 0.875rem;
+  }
+
+  .imgWrapper {
+    width: 52px;
+    height: 52px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up)
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .cardContainer {
+    /* Match your original size */
+    min-height: 9.0625rem;
+    gap: 0.875rem;
+  }
+
+  .imgWrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+}

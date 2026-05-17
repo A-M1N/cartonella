@@ -1,0 +1,113 @@
+/* ============================================
+   SECTION INTRO - Mobile First
+   ============================================ */
+
+.featuredContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.decor {
+  background-color: #5170ff;
+  border-radius: 4px;
+  height: 28px;
+  width: 14px;
+  flex-shrink: 0;
+}
+
+.featuredTitle {
+  color: #5170ff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.newArrivalTitle {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-family: "Poppins", sans-serif;
+}
+
+.action {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* ✅ REMOVED the generic .action button styles */
+/* Arrow buttons will be styled in their parent component */
+
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .featuredContainer {
+    gap: 1rem;
+  }
+
+  .decor {
+    height: 36px;
+    width: 18px;
+  }
+
+  .featuredTitle {
+    font-size: 15px;
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .newArrivalTitle {
+    font-size: 1.75rem;
+  }
+}
+
+/* ============================================
+   DESKTOP (1024px and up)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .decor {
+    height: 40px;
+    width: 20px;
+  }
+
+  .featuredTitle {
+    font-size: 16px;
+  }
+
+  .newArrivalTitle {
+    font-size: 2rem;
+  }
+
+  .action {
+    gap: 0.75rem;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up)
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .newArrivalTitle {
+    font-size: 36px;
+  }
+}

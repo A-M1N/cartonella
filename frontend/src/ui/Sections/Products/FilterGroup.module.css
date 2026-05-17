@@ -1,0 +1,32 @@
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins";
+  color: #5170ff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.group {
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.group:last-of-type {
+  border-bottom: none;
+}
+
+.content {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .group {
+    padding: 0.75rem;
+  }
+}

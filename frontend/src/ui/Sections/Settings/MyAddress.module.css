@@ -1,0 +1,354 @@
+/* MyAddress.module.css */
+.container {
+  width: 100%;
+  max-width: 69rem;
+}
+
+.inputAddressRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.input {
+  accent-color: #5171ff;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #f0eef0;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 2rem;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.row:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-color: #e2e8f0;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: "Inter", sans-serif;
+}
+
+.data {
+  font-size: 14px;
+  font-weight: 400;
+  color: #64748b;
+  font-family: "Noto Sans", sans-serif;
+  word-break: break-word;
+}
+
+.btnContainer {
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.btn {
+  border: none;
+  color: #5171ff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #eff2ff;
+}
+
+.editIcon {
+  font-size: 18px;
+}
+.empty {
+  text-align: center;
+  color: #64748b;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.95rem;
+  padding: 2rem 0;
+}
+
+/* Error box */
+.errorBox {
+  background: #fef2f2;
+  color: #991b1b;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Default badge */
+.defaultBadge {
+  display: inline-block;
+  background: #eef2ff;
+  color: #5171ff;
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.3px;
+  margin-top: 0.35rem;
+  width: fit-content;
+}
+
+/* Danger button (delete) */
+.btnDanger {
+  border: none;
+  color: #ef4444;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  margin-left: 0.25rem;
+}
+
+.btnDanger:hover {
+  background-color: #fee2e2;
+}
+
+/* Form overlay (light backdrop) */
+.formOverlay {
+  background: #ffffff;
+  border: 1px solid rgba(86, 99, 118, 0.12);
+  border-radius: 16px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+/* Form heading */
+.addressForm h3 {
+  margin: 0 0 1.25rem;
+  color: #111827;
+  font-family: "Inter", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* Grid layout for form fields */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Full‑width children inside formGrid (optional) */
+.formGrid input,
+.formGrid select {
+  height: 44px;
+  border: 1px solid rgba(86, 99, 118, 0.18);
+  border-radius: 10px;
+  padding: 0 0.9rem;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #1e293b;
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.formGrid input:focus,
+.formGrid select:focus {
+  outline: none;
+  border-color: #5171ff;
+  box-shadow: 0 0 0 3px rgba(81, 113, 255, 0.12);
+}
+
+/* Checkbox label inside the grid */
+.checkboxLabel {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #334155;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #5171ff;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Form actions (Save / Cancel) */
+.formActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.primaryBtn {
+  background: #5171ff;
+  color: white;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.primaryBtn:hover:not(:disabled) {
+  background: #3b5ed9;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondaryBtn {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid rgba(86, 99, 118, 0.15);
+  padding: 0.65rem 1.5rem;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.secondaryBtn:hover {
+  background: #e2e8f0;
+}
+
+/* Responsive adjustments for the form */
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .formOverlay {
+    padding: 1.25rem;
+  }
+
+  .formActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .row {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .inputAddressRow {
+    gap: 1rem;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+
+  .data {
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .inputAddressRow {
+    width: 100%;
+  }
+
+  .btnContainer {
+    margin-left: 0;
+    width: 100%;
+    padding-left: 2.75rem; /* Align with text after radio */
+  }
+
+  .btn {
+    width: fit-content;
+    background-color: #f8f9fa;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .row {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .inputAddressRow {
+    gap: 0.75rem;
+  }
+
+  .input {
+    width: 18px;
+    height: 18px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .data {
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+
+  .btnContainer {
+    padding-left: 2rem;
+  }
+}

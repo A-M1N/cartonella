@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap");
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 0.8rem;
+}
+.logoImgContainer {
+  width: auto;
+  height: auto;
+}
+.logoSvg {
+  height: 2.4rem;
+  width: auto;
+}
+
+.logoTextCart {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: white;
+  letter-spacing: 10.86px;
+}
+.logoTextOnella {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #5170ff;
+}

@@ -1,0 +1,149 @@
+/* AccountDetails.module.css */
+.container {
+  width: 100%;
+  max-width: 69rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #f0eef0;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 2rem;
+  background-color: white;
+  transition: box-shadow 0.2s ease;
+}
+.addPhone {
+  color: #64748b;
+  font-style: italic;
+}
+.row:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  font-family: "Inter", sans-serif;
+}
+
+.data {
+  font-size: 14px;
+  font-weight: 500;
+  color: #a2a6b0;
+  font-family: "Noto Sans", sans-serif;
+  word-break: break-word;
+}
+
+.btnContainer {
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.btn {
+  border: none;
+  color: #5171ff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #eff2ff;
+}
+
+.editIcon {
+  font-size: 18px;
+}
+
+.photoIcon {
+  font-size: 30px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .row {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+
+  .data {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .btnContainer {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    background-color: #f8f9fa;
+    padding: 0.75rem;
+  }
+
+  .photoIcon {
+    font-size: 24px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .row {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .data {
+    font-size: 12px;
+  }
+
+  .btn {
+    font-size: 13px;
+    gap: 0.375rem;
+  }
+
+  .editIcon {
+    font-size: 16px;
+  }
+}

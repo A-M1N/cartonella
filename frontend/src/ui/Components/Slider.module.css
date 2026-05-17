@@ -1,0 +1,428 @@
+/* ============================================
+   BASE SLIDER STYLES (Mobile First)
+   ============================================ */
+
+.sliderContainer {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: inherit;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.sliderContainer:focus-visible {
+  box-shadow: 0 0 0 3px rgba(81, 113, 255, 0.5);
+}
+
+.sliderWrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  user-select: none;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.slideImg {
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* ===== Arrow Buttons ===== */
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Mobile: Smaller, more compact */
+  width: 36px;
+  height: 36px;
+  font-size: 0.9rem;
+  border-radius: 50%;
+}
+
+.arrowBtn:hover {
+  background: rgba(81, 113, 255, 0.8);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrowBtn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.leftBtn {
+  left: 8px;
+}
+
+.rightBtn {
+  right: 8px;
+}
+
+/* ===== Dots Navigation ===== */
+.dotsContainer {
+  display: flex;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 8px;
+  z-index: 10;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 20px;
+}
+
+.dotBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  /* Touch-friendly size */
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.dotBtn:hover {
+  transform: scale(1.2);
+}
+
+.baseDot {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s ease;
+}
+
+.activeDot {
+  font-size: 1rem;
+  color: #5171ff;
+}
+
+.dotActive .baseDot {
+  color: white;
+}
+
+/* ===== Slide Content Overlay (Hero) ===== */
+.slideContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  color: white;
+  text-align: center;
+}
+
+.slideTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slideSubtitle {
+  font-size: 0.875rem;
+  margin: 0 0 1rem 0;
+  opacity: 0.9;
+}
+
+.slideCta {
+  background: #5171ff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.slideCta:hover {
+  background: #3d5bd9;
+  transform: translateY(-2px);
+}
+
+/* ===== Slide Counter (Product) ===== */
+.slideCounter {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-family: "Inter", sans-serif;
+  z-index: 10;
+}
+
+/* ============================================
+   VARIANT: HERO
+   ============================================ */
+
+.heroVariant .slideImg {
+  object-fit: cover;
+}
+
+/* ============================================
+   VARIANT: PRODUCT
+   ============================================ */
+
+.productVariant {
+  background: #fafafa;
+  border-radius: 12px;
+}
+
+.productVariant .slideImg {
+  object-fit: contain;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.productVariant .arrowBtn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+}
+
+.productVariant .arrowBtn:hover {
+  background: #5171ff;
+  color: white;
+  border-color: #5171ff;
+}
+
+.productVariant .dotsContainer {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.productVariant .baseDot {
+  color: #ccc;
+}
+
+.productVariant .activeDot {
+  color: #5171ff;
+}
+
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .arrowBtn {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+
+  .leftBtn {
+    left: 16px;
+  }
+
+  .rightBtn {
+    right: 16px;
+  }
+
+  .dotsContainer {
+    bottom: 20px;
+    gap: 10px;
+    padding: 8px 16px;
+  }
+
+  .dotBtn {
+    min-width: 28px;
+    min-height: 28px;
+  }
+
+  .baseDot {
+    font-size: 1rem;
+  }
+
+  .activeDot {
+    font-size: 1.1rem;
+  }
+
+  .slideContent {
+    padding: 2rem 3rem;
+    text-align: left;
+  }
+
+  .slideTitle {
+    font-size: 1.75rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1rem;
+  }
+
+  .slideCta {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   DESKTOP (1024px and up)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .arrowBtn {
+    width: 52px;
+    height: 52px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+  }
+
+  .leftBtn {
+    left: 24px;
+  }
+
+  .rightBtn {
+    right: 24px;
+  }
+
+  .dotsContainer {
+    bottom: 28px;
+    gap: 12px;
+  }
+
+  .baseDot {
+    font-size: 1.1rem;
+  }
+
+  .activeDot {
+    font-size: 1.25rem;
+  }
+
+  .slideContent {
+    padding: 3rem 5rem;
+    max-width: 60%;
+  }
+
+  .slideTitle {
+    font-size: 2.5rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1.125rem;
+    max-width: 500px;
+  }
+
+  .slideCounter {
+    top: 20px;
+    right: 20px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up)
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .arrowBtn {
+    width: 56px;
+    height: 56px;
+    font-size: 1.25rem;
+  }
+
+  .leftBtn {
+    left: 32px;
+  }
+
+  .rightBtn {
+    right: 32px;
+  }
+
+  .slideCta {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* ============================================
+   HIDE ARROWS ON TOUCH DEVICES (Optional)
+   Show only on hover for cleaner look
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Touch devices - make arrows semi-visible */
+  .arrowBtn {
+    opacity: 0.7;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Desktop with mouse - hide until hover */
+  .sliderContainer .arrowBtn {
+    opacity: 0;
+  }
+
+  .sliderContainer:hover .arrowBtn {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY: Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .sliderWrapper {
+    transition: none;
+  }
+
+  .arrowBtn,
+  .dotBtn,
+  .slideCta {
+    transition: none;
+  }
+}

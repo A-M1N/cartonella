@@ -1,0 +1,158 @@
+.stepsContainer {
+  width: 30rem;
+  height: 4.625rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.line {
+  width: 12.125rem;
+  height: 2px;
+  background-color: #cacdd8;
+  position: relative;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #cacdd8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  position: absolute;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.active {
+  background-color: #4855b1;
+}
+
+.activeCircle {
+  border: 2px solid #4855b1;
+}
+
+.paragraph {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #a2a6b0;
+}
+
+.activeParagraph {
+  color: black;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.paragraphContainer {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4rem;
+}
+
+/* ============================================
+   RESPONSIVE STYLES - Proportional Scaling
+   ============================================ */
+
+@media (max-width: 1200px) {
+  .stepsContainer {
+    width: 26rem;
+  }
+
+  .line {
+    width: 10.5rem;
+  }
+
+  .paragraphContainer {
+    gap: 4rem;
+    margin-left: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stepsContainer {
+    width: 22rem;
+  }
+
+  .line {
+    width: 9rem;
+  }
+
+  .circle {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .paragraphContainer {
+    gap: 3rem;
+    margin-left: 2.5rem;
+  }
+
+  .paragraph,
+  .activeParagraph {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stepsContainer {
+    width: 18rem;
+  }
+
+  .line {
+    width: 7.25rem;
+  }
+
+  .circle {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .paragraphContainer {
+    gap: 2rem;
+    margin-left: 2rem;
+  }
+
+  .paragraph,
+  .activeParagraph {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .stepsContainer {
+    width: 15rem;
+  }
+
+  .line {
+    width: 6rem;
+  }
+
+  .circle {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .paragraphContainer {
+    gap: 1.25rem;
+    margin-left: 1.5rem;
+  }
+
+  .paragraph,
+  .activeParagraph {
+    font-size: 11px;
+  }
+}

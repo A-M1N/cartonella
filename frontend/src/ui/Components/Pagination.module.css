@@ -1,0 +1,86 @@
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.font {
+  font-size: 13px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #a2a6b0;
+  border-radius: 50%;
+  border: 2px solid #a2a6b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  width: 2.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.font:hover:not(.disabled):not(.active) {
+  background-color: #798fff;
+  color: white;
+  border-color: #798fff;
+}
+
+.font.active {
+  background-color: #4855b1;
+  color: white;
+  border-color: #4855b1;
+}
+
+.font.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.font.disabled:hover {
+  background-color: transparent;
+  color: #a2a6b0;
+  border-color: #a2a6b0;
+}
+
+.dots {
+  font-size: 13px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #a2a6b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+}
+
+.icon {
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .container {
+    gap: 0.5rem;
+  }
+
+  .font {
+    width: 2rem;
+    font-size: 11px;
+  }
+
+  .dots {
+    width: 1.5rem;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 400px) {
+  .font {
+    width: 1.75rem;
+    font-size: 10px;
+  }
+}

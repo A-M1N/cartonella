@@ -1,0 +1,412 @@
+/* ============================================
+   BASE STYLES (Mobile First)
+   ============================================ */
+
+.topNav {
+  width: 100%;
+  min-height: 3.5rem;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  position: relative;
+}
+
+.logoWrapper {
+  flex-shrink: 0;
+  z-index: 10;
+  /* Set a consistent width for logo area */
+  min-width: 140px;
+}
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.userProfile:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #5171ff;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.logoutIcon {
+  font-size: 18px;
+}
+
+/* ==================== */
+/* MOBILE USER STYLES   */
+/* ==================== */
+
+.mobileUserProfile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin-bottom: 0.5rem;
+}
+
+.userAvatarMobile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #5171ff;
+}
+
+.userNameMobile {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.mobileLogoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.mobileLogoutBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.desktopSearch {
+  display: none;
+}
+
+.desktopNav {
+  display: none;
+}
+
+.mobileActions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.iconButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Overlay */
+.searchOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  z-index: 50;
+}
+
+.searchOverlayContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.searchInputMobile {
+  flex: 1;
+  height: 2.5rem;
+  padding: 0 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.searchInputMobile::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.searchInputMobile:focus {
+  border-color: #5171ff;
+  box-shadow: 0 0 8px #5171ff55;
+}
+
+.closeSearch {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.closeSearch:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Mobile Menu ===== */
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #111;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 100;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mobileLink {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.875rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.mobileLink:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Login Links (Desktop) ===== */
+.loginLink {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.875rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.loginLink:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   TABLET (640px and up)
+   ============================================ */
+
+@media (min-width: 640px) {
+  .topNav {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .searchOverlay {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* ============================================
+   DESKTOP (1024px and up)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .topNav {
+    padding: 1rem 3rem;
+  }
+
+  .logoWrapper {
+    min-width: 180px; /* Match this with MainNav spacer */
+  }
+
+  /* Show Desktop Search */
+  .desktopSearch {
+    display: block;
+    position: relative;
+    flex: 1;
+    max-width: 32rem;
+    margin: 0 2rem;
+  }
+
+  .searchInput {
+    width: 100%;
+    height: 2.5rem;
+    padding-left: 1rem;
+    padding-right: 2.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.25s ease;
+  }
+
+  .searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .searchInput:focus {
+    border-color: #5171ff;
+    box-shadow: 0 0 8px rgba(81, 113, 255, 0.3);
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .searchIcon {
+    position: absolute;
+    top: 50%;
+    right: 0.875rem;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    color: #5171ff;
+    pointer-events: none;
+  }
+
+  /* Show Desktop Nav */
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Give right section a minimum width for alignment */
+    min-width: 200px;
+    justify-content: flex-end;
+  }
+
+  /* Hide Mobile Elements */
+  .mobileActions {
+    display: none;
+  }
+
+  .searchOverlay {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up)
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .topNav {
+    padding: 1rem 5rem;
+  }
+
+  .logoWrapper {
+    min-width: 200px;
+  }
+
+  .desktopSearch {
+    max-width: 36rem;
+    margin: 0 3rem;
+  }
+
+  .desktopNav {
+    gap: 1.25rem;
+    min-width: 220px;
+  }
+}
+
+/* ============================================
+   EXTRA LARGE (1440px and up)
+   ============================================ */
+
+@media (min-width: 1440px) {
+  .topNav {
+    padding: 1rem 8rem;
+  }
+
+  .logoWrapper {
+    min-width: 220px;
+  }
+
+  .desktopSearch {
+    max-width: 40rem;
+  }
+
+  .desktopNav {
+    min-width: 240px;
+  }
+}

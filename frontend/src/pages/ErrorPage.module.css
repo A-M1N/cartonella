@@ -1,0 +1,31 @@
+.container {
+  padding: 5rem 0;
+  text-align: center;
+}
+.heading {
+  font-size: 6rem;
+  font-family: "Inter";
+  font-weight: 500;
+  color: black;
+  margin-bottom: 3rem;
+}
+.paragraph {
+  font-size: 16px;
+  font-family: "Poppins";
+  margin-bottom: 3rem;
+}
+.homeBtn {
+  background-color: #4855b1;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins";
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  transition: background 0.3s ease;
+}
+.homeBtn:hover {
+  background-color: rgb(42, 62, 142);
+}

@@ -1,0 +1,22 @@
+# Node
+node_modules
+npm-debug.log
+yarn.lock
+
+# Env
+.env
+.env.*
+
+# Build
+dist
+build
+
+# Docker
+.dockerignore
+
+# Prisma
+prisma/dev.db
+
+# OS
+.DS_Store
+Thumbs.db

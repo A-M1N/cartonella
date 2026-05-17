@@ -1,0 +1,113 @@
+.subItem {
+  list-style: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Inter";
+  font-weight: 400;
+  color: #525252;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.subItem:hover {
+  color: #5171ff;
+  font-weight: 600;
+}
+.imgWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: auto;
+  height: 44px;
+}
+.imgWrapper p {
+  margin: 0;
+  font-size: 14px;
+  font-family: "Noto Sans", sans-serif;
+  color: #1e293b;
+  flex: 1;
+}
+
+.imgContainer {
+  width: 75px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.iconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.arrow {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.arrow path {
+  fill: #525252;
+  transition: fill 0.2s ease;
+}
+
+.subItem:hover .arrow path {
+  fill: #5171ff;
+}
+.nestedList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nestedItem {
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.nestedItem:hover {
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.nestedImgWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.nestedImgContainer {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.nestedItem:hover .nestedImgContainer {
+  background-color: white;
+}
+
+.nestedIconImg {
+  max-width: 40px;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.nestedImgWrapper p {
+  margin: 0;
+  font-size: 13px;
+  font-family: "Noto Sans", sans-serif;
+  color: #5171ff;
+  font-weight: 500;
+}

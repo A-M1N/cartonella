@@ -1,0 +1,194 @@
+/* ============================================
+   TOP BRANDS SECTION - Mobile First
+   Reverse Pyramid Layout (7-6)
+   ============================================ */
+
+.topBrandsSection {
+  background: radial-gradient(circle at center, #242528 0%, #000 100%);
+  width: 100%;
+  min-height: auto;
+  padding: 2.5rem 0;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleTop {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.paragraph {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  padding: 0 1rem;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Mobile: Flex wrap, natural flow */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+/* ============================================
+   SMALL MOBILE (480px and up)
+   ============================================ */
+
+@media (min-width: 480px) {
+  .topBrandsSection {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .titleTop {
+    font-size: 2rem;
+  }
+
+  .paragraph {
+    font-size: 0.95rem;
+  }
+
+  .row {
+    gap: 1.25rem;
+  }
+}
+
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .topBrandsSection {
+    padding: 4rem 0;
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+
+  .titleTop {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .paragraph {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 700px;
+  }
+
+  .row {
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+}
+
+/* ============================================
+   DESKTOP (1024px and up)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .topBrandsSection {
+    padding: 4.5rem 0;
+  }
+
+  .container {
+    padding: 0 3rem;
+  }
+
+  .titleTop {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .paragraph {
+    font-size: 1.1rem;
+    max-width: 750px;
+    margin-bottom: 2rem;
+  }
+
+  .row {
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up) - 6-5-2 or 6-6-1
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .topBrandsSection {
+    padding: 5rem 0;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .titleTop {
+    font-size: 38px;
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .paragraph {
+    font-size: 18px;
+    line-height: 2;
+    max-width: 800px;
+  }
+
+  .row {
+    gap: 40px;
+    padding: 20px 0;
+    /* 6 cards: 6 × 180px + 5 × 40px = 1080 + 200 = 1280px */
+    max-width: 1280px;
+  }
+}
+
+/* ============================================
+   EXTRA LARGE (1440px and up) - 7-6 Pyramid
+   ============================================ */
+
+@media (min-width: 1440px) {
+  .row {
+    gap: 45px;
+    /* 7 cards: 7 × 180px + 6 × 45px = 1260 + 270 = 1530px */
+    max-width: 1530px;
+  }
+}
+
+/* ============================================
+   ULTRA WIDE (1600px and up) - 7-6 Pyramid (Original)
+   ============================================ */
+
+@media (min-width: 1600px) {
+  .row {
+    gap: 50px;
+    /* 7 cards: 7 × 204px + 6 × 50px = 1428 + 300 = 1728px */
+    max-width: 1728px;
+  }
+}

@@ -1,0 +1,10 @@
+.label {
+  border-radius: 4px;
+  color: white;
+  background-color: #00ff66;
+  padding: 4px 12px;
+  position: absolute;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 1;
+}

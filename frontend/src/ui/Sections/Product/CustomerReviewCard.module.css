@@ -1,0 +1,229 @@
+.cardContainer {
+  width: 100%;
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.cardContainer:last-child {
+  border-bottom: none;
+}
+
+.layoutProfile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.verticalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.imgWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.iconProfile {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+  color: #1e293b;
+  margin: 0;
+}
+
+.date {
+  color: #64748b;
+  font-size: 14px;
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+}
+.verifiedBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #10b981;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+}
+
+.ratingContainer {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.reviewTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: "Noto Sans", sans-serif;
+}
+.review {
+  color: #64748b;
+  font-size: 15px;
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.8;
+  margin: 0;
+}
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editBtn,
+.deleteBtn {
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.editBtn:hover {
+  background-color: #f1f5f9;
+  color: #5171ff;
+  border-color: #5171ff;
+}
+
+.deleteBtn:hover {
+  background-color: #fef2f2;
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+.deleteConfirm {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fef2f2;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+}
+
+.deleteConfirm p {
+  margin: 0 0 0.75rem 0;
+  color: #991b1b;
+  font-size: 14px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.confirmButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cancelBtn {
+  padding: 6px 12px;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.cancelBtn:hover {
+  background-color: #f3f4f6;
+}
+
+.confirmDeleteBtn {
+  padding: 6px 12px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.confirmDeleteBtn:hover {
+  background-color: #dc2626;
+}
+
+.confirmDeleteBtn:disabled {
+  background-color: #fca5a5;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .cardContainer {
+    margin: 1.5rem 0;
+    padding-bottom: 1.5rem;
+  }
+
+  .imgWrapper {
+    width: 42px;
+    height: 42px;
+  }
+  .actionButtons {
+    align-self: flex-end;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+
+  .date {
+    font-size: 12px;
+  }
+
+  .ratingContainer {
+    margin: 0.75rem 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .review {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 576px) {
+  .cardContainer {
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+  }
+
+  .imgWrapper {
+    width: 38px;
+    height: 38px;
+  }
+
+  .name {
+    font-size: 13px;
+  }
+
+  .date {
+    font-size: 11px;
+  }
+
+  .review {
+    font-size: 13px;
+  }
+  .verifiedBadge {
+    font-size: 10px;
+  }
+}

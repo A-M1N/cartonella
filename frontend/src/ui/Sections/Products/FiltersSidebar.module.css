@@ -1,0 +1,259 @@
+.leftPanel {
+  background-color: #f5f7ff;
+  border-radius: 8px;
+  padding-bottom: 1rem;
+}
+
+.filterTitle {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Poppins";
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clearBtn {
+  font-size: 14px;
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #a2a6b0;
+  border: 2px solid #a2a6b0;
+  background-color: white;
+  width: 12.5rem;
+  height: 37px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 0.875rem;
+  margin-bottom: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.clearBtn:hover {
+  border-color: #4855b1;
+  color: #4855b1;
+}
+
+.ulFilters {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.liFilter {
+  padding: 4px;
+  font-size: 14px;
+  font-family: "Poppins";
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.liFilter:hover {
+  color: #5170ff;
+}
+
+.applyBtn {
+  font-size: 14px;
+  font-family: "Poppins";
+  font-weight: 500;
+  color: white;
+  border: none;
+  background-color: #4855b1;
+  width: 12.5rem;
+  height: 38px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 0.875rem;
+  margin-bottom: 0.875rem;
+  transition: background 0.3s ease;
+}
+
+.applyBtn:hover {
+  background-color: rgb(42, 62, 142);
+}
+
+.rowPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.inputPrice {
+  width: 4.68rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  border: none;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #dddde0;
+  font-family: "Poppins";
+  font-size: 13px;
+}
+
+.inputPrice:focus {
+  outline: 2px solid #4855b1;
+}
+
+.inputPrice::placeholder {
+  color: black;
+}
+
+.dash {
+  font-family: "Poppins";
+  color: #a2a6b0;
+}
+
+.rowBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.875rem;
+}
+
+.applyPriceBtn {
+  border: none;
+  border-radius: 5px;
+  background-color: #4855b1;
+  color: white;
+  padding: 0.5rem 4rem;
+  font-size: 13px;
+  font-family: "Noto Sans";
+  font-weight: 500;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.applyPriceBtn:hover {
+  background-color: rgb(42, 62, 142);
+}
+
+.checkbox {
+  accent-color: #4855b1;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+}
+
+.ulRating {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin-top: 0.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.colorContainer {
+  margin-top: 0.5rem;
+}
+
+.filterCount {
+  font-weight: 400;
+  font-size: 12px;
+  margin-left: 0.5rem;
+  color: #4855b1;
+}
+
+.liFilter.active {
+  color: #5170ff;
+  font-weight: 600;
+}
+
+.count {
+  font-size: 12px;
+  color: #a2a6b0;
+  margin-left: 0.25rem;
+}
+
+.ratingItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.ratingItem:hover {
+  background-color: rgba(81, 112, 255, 0.1);
+}
+
+.ratingItem.active {
+  background-color: rgba(81, 112, 255, 0.15);
+}
+
+.ratingText {
+  font-size: 12px;
+  font-family: "Poppins";
+  color: #666;
+}
+
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+.clearBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .clearBtn,
+  .applyBtn {
+    width: 10rem;
+    font-size: 12px;
+  }
+
+  .applyPriceBtn {
+    padding: 0.5rem 2.5rem;
+  }
+
+  .inputPrice {
+    width: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftPanel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .filterTitle {
+    grid-column: 1 / -1;
+    padding-top: 0;
+  }
+
+  .btnContainer {
+    grid-column: 1 / -1;
+  }
+
+  .clearBtn,
+  .applyBtn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leftPanel {
+    grid-template-columns: 1fr;
+  }
+}

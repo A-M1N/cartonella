@@ -1,0 +1,171 @@
+/* ============================================
+   BRAND CARD - Mobile First
+   ============================================ */
+
+.brandCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-decoration: none;
+  background-color: black;
+}
+
+.brandCard:hover {
+  transform: scale(1.08);
+  box-shadow:
+    0 0 20px var(--hover-color),
+    0 0 40px var(--hover-color);
+}
+
+.brandCard:active {
+  transform: scale(1.02);
+}
+
+.svgWrapper {
+  width: 65%;
+  height: 65%;
+  padding: 0.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+  fill: var(--brand-color);
+  color: var(--brand-color);
+  z-index: 50;
+  object-fit: contain;
+}
+
+.brandCard:hover .svg {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* ============================================
+   SMALL MOBILE (480px and up)
+   ============================================ */
+
+@media (min-width: 480px) {
+  .brandCard {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .brandCard {
+    width: 140px;
+    height: 140px;
+  }
+
+  .svgWrapper {
+    width: 68%;
+    height: 68%;
+    padding: 0.75rem;
+  }
+
+  .brandCard:hover {
+    transform: scale(1.1);
+    box-shadow:
+      0 0 25px var(--hover-color),
+      0 0 50px var(--hover-color);
+  }
+}
+
+/* ============================================
+   DESKTOP (1024px and up)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .brandCard {
+    width: 160px;
+    height: 160px;
+  }
+
+  .svgWrapper {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up)
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .brandCard {
+    width: 180px;
+    height: 180px;
+  }
+
+  .svgWrapper {
+    width: 72%;
+    height: 72%;
+    padding: 0.875rem;
+  }
+}
+
+/* ============================================
+   EXTRA LARGE (1440px and up)
+   ============================================ */
+
+@media (min-width: 1440px) {
+  .brandCard {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* ============================================
+   ULTRA WIDE (1600px and up) - Original size
+   ============================================ */
+
+@media (min-width: 1600px) {
+  .brandCard {
+    width: 204px;
+    height: 204px;
+  }
+
+  .svgWrapper {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+/* ============================================
+   TOUCH DEVICES
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+  .brandCard:hover {
+    transform: none;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  }
+
+  .brandCard:active {
+    transform: scale(0.95);
+    box-shadow:
+      0 0 25px var(--hover-color),
+      0 0 50px var(--hover-color);
+  }
+}

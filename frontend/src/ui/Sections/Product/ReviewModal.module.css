@@ -1,0 +1,222 @@
+/* ui/ReviewModal.module.css */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #64748b;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.closeBtn:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Noto Sans", sans-serif;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-family: "Noto Sans", sans-serif;
+  color: #64748b;
+  margin: 0 0 1.5rem 0;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.ratingInput {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ratingText {
+  font-size: 14px;
+  font-family: "Noto Sans", sans-serif;
+  color: #64748b;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Noto Sans", sans-serif;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: #5171ff;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: "Noto Sans", sans-serif;
+  color: #1e293b;
+  outline: none;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.2s;
+}
+
+.textarea:focus {
+  border-color: #5171ff;
+}
+
+.textarea::placeholder {
+  color: #94a3b8;
+}
+
+.charCount {
+  font-size: 12px;
+  font-family: "Noto Sans", sans-serif;
+  color: #94a3b8;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.charCountError {
+  color: #ef4444;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cancelBtn {
+  flex: 1;
+  padding: 12px 20px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancelBtn:hover:not(:disabled) {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.submitBtn {
+  flex: 1;
+  padding: 12px 20px;
+  background-color: #5171ff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background-color: #3957d1;
+}
+
+.submitBtn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.cancelBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 576px) {
+  .modal {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .buttonGroup {
+    flex-direction: column-reverse;
+  }
+
+  .ratingInput {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

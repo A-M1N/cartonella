@@ -1,0 +1,337 @@
+.adminShell {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: #f7f8fc;
+  color: #111827;
+}
+
+.sidebar {
+  width: 17.5rem;
+  min-height: 100vh;
+  background: #111827;
+  border-right: 1px solid rgba(86, 99, 118, 0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.5rem 0.5rem 1.5rem;
+  border-bottom: 1px solid rgba(86, 99, 118, 0.12);
+}
+
+.logoIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #5171ff, #3957d1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.65rem;
+  box-shadow: 0 12px 24px rgba(81, 113, 255, 0.25);
+}
+
+.logoTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.logoSubtitle {
+  margin: 0.2rem 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-top: 1.5rem;
+  flex: 1;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  height: 46px;
+
+  padding: 0 0.875rem;
+  border-radius: 10px;
+  color: #4b5563;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.navLink:hover {
+  background: #eef2ff;
+  color: #3957d1;
+  transform: translateX(4px);
+}
+
+.navLink.active {
+  background: #5171ff;
+  color: white;
+  box-shadow: 0 10px 20px rgba(81, 113, 255, 0.25);
+}
+
+.navIcon {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.sidebarFooter {
+  border-top: 1px solid rgba(86, 99, 118, 0.12);
+  padding-top: 1rem;
+}
+
+.adminCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  background: #f9fafb;
+  margin-bottom: 0.875rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  background: #5171ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+
+.adminInfo {
+  min-width: 0;
+}
+
+.adminName {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.adminRole {
+  margin: 0.2rem 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-family: "Poppins", sans-serif;
+}
+
+.logoutBtn {
+  width: 100%;
+  height: 42px;
+  border: 1px solid rgba(86, 99, 118, 0.2);
+  background: white;
+  color: #dc2626;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background: #fee2e2;
+  border-color: #fecaca;
+  transform: translateY(-1px);
+}
+
+.contentArea {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 86px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(86, 99, 118, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.welcomeText {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-family: "Poppins", sans-serif;
+}
+
+.topbarTitle {
+  margin: 0.2rem 0 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.visitStoreBtn {
+  height: 42px;
+  padding: 0 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: #5171ff;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.visitStoreBtn:hover {
+  background: #3957d1;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(81, 113, 255, 0.22);
+}
+
+.mainContent {
+  padding: 2rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 5.5rem;
+    padding: 1rem 0.75rem;
+  }
+
+  .logoBox {
+    justify-content: center;
+    padding: 0.5rem 0 1.25rem;
+  }
+
+  .logoTitle,
+  .logoSubtitle,
+  .navLink span,
+  .adminInfo,
+  .logoutBtn span {
+    display: none;
+  }
+
+  .navLink {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .navLink:hover {
+    transform: translateX(0);
+  }
+
+  .adminCard {
+    justify-content: center;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .adminShell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid rgba(86, 99, 118, 0.12);
+  }
+
+  .logoBox {
+    justify-content: flex-start;
+  }
+
+  .logoTitle,
+  .logoSubtitle,
+  .navLink span,
+  .adminInfo,
+  .logoutBtn span {
+    display: block;
+  }
+
+  .nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-top: 1rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .navLink {
+    min-width: max-content;
+    padding: 0 1rem;
+  }
+
+  .sidebarFooter {
+    display: none;
+  }
+
+  .topbar {
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .mainContent {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .visitStoreBtn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,144 @@
+/* ============================================
+   BEST SELLING SECTION - Mobile First
+   Aligned with DealsSection & Categories (max-width: 85rem)
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: 85rem; /* ✅ Same as DealsSection & Categories */
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 1 card on small mobile */
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  justify-items: center;
+}
+
+.btn {
+  font-size: 14px;
+  color: white;
+  background-color: #5171ff;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+  width: 8rem;
+  height: 2.75rem;
+}
+
+.btn:hover {
+  background-color: #3957d1;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   SMALL MOBILE (480px and up)
+   ============================================ */
+
+@media (min-width: 480px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards */
+    gap: 1.25rem;
+  }
+
+  .btn {
+    font-size: 15px;
+    width: 8.5rem;
+    height: 3rem;
+  }
+}
+
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .container {
+    padding: 2.5rem 2rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards */
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    font-size: 15px;
+    width: 9rem;
+    height: 3.25rem;
+  }
+}
+
+/* ============================================
+   DESKTOP (1024px and up)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 3rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(4, 1fr); /* 4 cards */
+    gap: 1.75rem;
+    justify-items: stretch;
+  }
+
+  .btn {
+    font-size: 16px;
+    width: 9.5rem;
+    height: 3.5rem;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up)
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 3rem 0; /* ✅ Same as DealsSection & Categories */
+  }
+
+  .row {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .btn {
+    width: 9.9rem;
+    height: 3.5rem;
+  }
+}
+
+/* ============================================
+   EXTRA LARGE (1440px and up)
+   ============================================ */
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 90rem; /* ✅ Match DealsSection & Categories */
+  }
+
+  .row {
+    gap: 2.5rem;
+  }
+}

@@ -1,0 +1,160 @@
+/* SettingsSidebar.module.css */
+.userIcon {
+  font-size: 24px;
+  color: #a2a6b0;
+  flex-shrink: 0;
+}
+
+.sideBarFeatures {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 15.18rem;
+}
+
+.settingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  color: #a2a6b0;
+  font-family: "Noto Sans", sans-serif;
+  white-space: nowrap;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #a2a6b0;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.link:hover {
+  background-color: #f1f5f9;
+}
+
+.link:hover .userIcon,
+.link:hover .title {
+  color: #5171ff;
+}
+
+.active {
+  background-color: #eff2ff;
+}
+
+.active .userIcon {
+  color: #5171ff;
+}
+
+.active .title {
+  color: #5171ff;
+  font-weight: 500;
+}
+
+/* Tablet - Horizontal layout */
+@media (max-width: 1024px) {
+  .sideBarFeatures {
+    margin-top: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .settingsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+  }
+
+  .item {
+    flex: 0 0 auto;
+  }
+
+  .link {
+    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    background-color: white;
+  }
+
+  .active {
+    border-color: #5171ff;
+  }
+
+  .userIcon {
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .settingsList {
+    gap: 0.375rem;
+  }
+
+  .link {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .userIcon {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile - Icons only with tooltip or scrollable */
+@media (max-width: 480px) {
+  .sideBarFeatures {
+    max-width: 100%;
+    margin-top: 0.5rem;
+  }
+  .settingsList {
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .settingsList::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .settingsList::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 4px;
+  }
+
+  .link {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .title {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .userIcon {
+    font-size: 16px;
+  }
+}

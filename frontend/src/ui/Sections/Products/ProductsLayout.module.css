@@ -1,0 +1,36 @@
+.section {
+  margin-left: 300px;
+  display: grid;
+  grid-template-columns: 14.625rem 72rem;
+}
+
+@media (max-width: 1400px) {
+  .section {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-template-columns: 14.625rem 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .section {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    grid-template-columns: 12rem 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .sidebarWrapper {
+    order: 2;
+  }
+
+  .gridWrapper {
+    order: 1;
+  }
+}

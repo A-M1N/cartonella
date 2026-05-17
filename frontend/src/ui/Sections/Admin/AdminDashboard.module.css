@@ -1,0 +1,483 @@
+.dashboard {
+  width: 100%;
+  padding: 2rem 2rem 1rem;
+  background: #f8fafc;
+  min-height: 100vh;
+  border-radius: 0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.35rem;
+    color: #5171ff;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .title {
+    margin: 0;
+    color: #0f172a; /* slightly deeper than #111827 for richness */
+    font-family: "Inter", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px; /* tighter, modern feel */
+  }
+
+  .subtitle {
+    margin: 0.5rem 0 0;
+    color: #64748b;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .primaryAction {
+    height: 46px;
+    padding: 0 1.5rem;
+    border-radius: 12px;
+    background: #5171ff;
+    color: white;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    box-shadow: 0 4px 14px rgba(81, 113, 255, 0.25);
+  }
+
+  .primaryAction:hover {
+    background: #3b5ed9; /* darker shade of #5171ff */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(81, 113, 255, 0.35);
+  }
+
+  /* Stats grid */
+  .statsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .statCard {
+    position: relative;
+    min-height: 155px;
+    background: #ffffff;
+    border: 1px solid rgba(86, 99, 118, 0.12);
+    border-radius: 20px; /* softer than 16px */
+    padding: 1.4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.02),
+      0 8px 24px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Watermark circle – now softer and larger */
+  .statCard::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    bottom: -40px;
+    width: 110px;
+    height: 110px;
+    background: rgba(81, 113, 255, 0.05);
+    border-radius: 50%;
+    filter: blur(2px);
+  }
+
+  .statCard:hover {
+    transform: translateY(-5px);
+    border-color: rgba(81, 113, 255, 0.4);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  }
+
+  .iconBox {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .blue {
+    background: linear-gradient(135deg, #5171ff, #3b5ed9);
+  }
+  .orange {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+  }
+  .purple {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  }
+  .green {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+  }
+
+  .statTitle {
+    margin: 0;
+    color: #64748b;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .statValue {
+    margin: 0.2rem 0 0;
+    color: #0f172a;
+    font-family: "Inter", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+
+  .trendBadge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #16a34a;
+    background: #dcfce7;
+    padding: 0.25rem 0.6rem;
+    border-radius: 30px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* Content layout */
+  .contentGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.8fr);
+    gap: 1.5rem;
+  }
+
+  .panel,
+  .quickPanel {
+    background: #ffffff;
+    border: 1px solid rgba(86, 99, 118, 0.1);
+    border-radius: 20px;
+    padding: 1.4rem;
+    box-shadow:
+      0 4px 16px rgba(0, 0, 0, 0.02),
+      0 12px 28px rgba(15, 23, 42, 0.04);
+    backdrop-filter: blur(1px);
+  }
+
+  .panelHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .panelTitle {
+    margin: 0;
+    color: #0f172a;
+    font-family: "Inter", sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  .panelSubtitle {
+    margin: 0.35rem 0 0;
+    color: #64748b;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .viewAll {
+    color: #5171ff;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .viewAll:hover {
+    color: #3b5ed9;
+  }
+
+  /* Table */
+  .tableWrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 14px;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table th {
+    text-align: left;
+    color: #64748b;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.95rem 0.75rem;
+    border-bottom: 1px solid rgba(86, 99, 118, 0.12);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .table td {
+    padding: 0.95rem 0.75rem;
+    border-bottom: 1px solid rgba(86, 99, 118, 0.06);
+    font-family: "Poppins", sans-serif;
+    font-size: 0.875rem;
+    vertical-align: middle;
+    color: #334155;
+  }
+
+  .table tbody tr:hover {
+    background: #f8fafc;
+    transition: background 0.2s;
+  }
+
+  .orderNumber {
+    color: #0f172a;
+    font-weight: 700;
+  }
+
+  .customerCell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .customerName {
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .customerEmail {
+    color: #64748b;
+    font-size: 0.78rem;
+  }
+
+  .statusBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    height: 28px;
+    padding: 0 0.7rem;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: #3957d1;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  /* status colours from your original */
+  .pending {
+    background: #fef3c7;
+    color: #b45309;
+  }
+  .confirmed,
+  .processing {
+    background: #dbeafe;
+    color: #1d4ed8;
+  }
+  .shipped {
+    background: #ede9fe;
+    color: #6d28d9;
+  }
+  .delivered {
+    background: #dcfce7;
+    color: #15803d;
+  }
+  .cancelled {
+    background: #fee2e2;
+    color: #b91c1c;
+  }
+
+  .totalCell {
+    color: #0f172a;
+    font-weight: 700;
+  }
+
+  /* Quick actions panel */
+  .quickActions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+    margin-top: 1.25rem;
+  }
+
+  .quickAction {
+    display: flex;
+    align-items: center;
+    gap: 0.95rem;
+    padding: 1.1rem;
+    border: 1px solid rgba(86, 99, 118, 0.12);
+    border-radius: 16px;
+    color: inherit;
+    text-decoration: none;
+    background: #ffffff;
+    transition:
+      background 0.2s,
+      border-color 0.2s,
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+
+  .quickAction svg {
+    width: 44px;
+    height: 44px;
+    padding: 0.6rem;
+    border-radius: 14px;
+    background: #eef2ff;
+    color: #5171ff;
+    flex-shrink: 0;
+    transition:
+      background 0.2s,
+      color 0.2s;
+  }
+
+  .quickAction:hover {
+    background: #f8fafc;
+    border-color: rgba(81, 113, 255, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(81, 113, 255, 0.08);
+  }
+  .quickAction:hover svg {
+    background: #5171ff;
+    color: #ffffff;
+  }
+
+  .quickAction h3 {
+    margin: 0;
+    color: #0f172a;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .quickAction p {
+    margin: 0.25rem 0 0;
+    color: #64748b;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  /* Empty & Error states */
+  .emptyState {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-family: "Poppins", sans-serif;
+    background: #f1f5f9;
+    border-radius: 14px;
+    font-size: 0.95rem;
+  }
+
+  .errorBox {
+    background: #fef2f2;
+    color: #991b1b;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid #fecaca;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .errorBox h2 {
+    margin: 0 0 0.5rem;
+    font-family: "Inter", sans-serif;
+  }
+
+  .errorBox p {
+    margin: 0;
+  }
+
+  /* Skeleton loading */
+  .skeletonCard {
+    height: 155px;
+    border-radius: 20px;
+    background: linear-gradient(100deg, #f1f5f9 30%, #e2e8f0 50%, #f1f5f9 70%);
+    background-size: 200% 100%;
+    animation: pulse 1.6s ease infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .statsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .contentGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+    }
+    .primaryAction {
+      width: 100%;
+      justify-content: center;
+    }
+    .statsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .title {
+      font-size: 1.6rem;
+    }
+    .panelHeader {
+      flex-direction: column;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,527 @@
+/* ============================================
+   BASE STYLES (Mobile First)
+   ============================================ */
+
+.mainNav {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  position: relative;
+  /* Add subtle shadow to separate from TopBar */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Desktop Nav - Hidden on Mobile ===== */
+.desktopNav {
+  display: none;
+}
+
+/* ===== Mobile Actions - Visible on Mobile ===== */
+.mobileActions {
+  display: flex;
+  align-items: center;
+}
+
+.hamburgerBtn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #1a1a1a;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.hamburgerBtn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Mobile Overlay ===== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== Mobile Menu ===== */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85%;
+  max-width: 320px;
+  height: 100vh;
+  height: 100dvh;
+  background: white;
+  z-index: 999;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1;
+}
+
+.menuTitle {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  padding: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Mobile List ===== */
+.mobileList {
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+.mobileNavItem {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 1rem 1.25rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.mobileNavLink:hover {
+  background: #f5f5f5;
+}
+
+.mobileNavBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.mobileNavBtn:hover {
+  background: #f5f5f5;
+}
+
+.chevron {
+  font-size: 0.9rem;
+  color: #999;
+  transition: transform 0.3s ease;
+}
+
+.chevronActive {
+  transform: rotate(180deg);
+}
+
+/* ===== Mobile Dropdown ===== */
+.mobileDropdown {
+  background: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+.mobileSubList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileSubItem {
+  border-bottom: 1px solid #eee;
+}
+
+.mobileSubItem:last-child {
+  border-bottom: none;
+}
+
+.mobileSubBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.875rem 1.25rem 0.875rem 1.75rem;
+  background: none;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: #525252;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.mobileSubBtn:hover {
+  background: #f0f0f0;
+}
+
+.mobileSubIcon {
+  width: 36px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.subChevron {
+  font-size: 0.75rem;
+  color: #999;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+/* ===== Mobile Nested List ===== */
+.mobileNestedList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+.mobileNestedItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.25rem 0.75rem 2.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  color: #666;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.mobileNestedItem:hover {
+  background: #eee;
+  color: #5171ff;
+}
+
+.mobileNestedIcon {
+  width: 28px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ===== Right Buttons (Always Visible) ===== */
+.rightBtns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconContainer {
+  position: relative;
+}
+
+.iconContainer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: #5171ff;
+  color: white;
+  font-size: 0.65rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.icon {
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  transition: color 0.2s ease;
+}
+
+.icon:hover {
+  color: #5171ff;
+}
+
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .mainNav {
+    padding: 0.5rem 2rem;
+  }
+
+  .mobileMenu {
+    max-width: 380px;
+  }
+
+  .rightBtns {
+    gap: 1.5rem;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================================
+   DESKTOP (1024px and up)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .mainNav {
+    padding: 0 3rem;
+    /* Remove shadow on desktop for cleaner look, or keep it */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Show Desktop Nav */
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  /* ⭐ KEY: Add spacer to align with logo above */
+  .logoSpacer {
+    min-width: 180px;
+    flex-shrink: 0;
+  }
+
+  /* Hide Mobile Elements */
+  .mobileActions {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  /* Desktop List - Now with proper alignment */
+  .list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 2rem; /* Match the search bar margin */
+  }
+
+  .navItem {
+    position: relative;
+    padding: 1rem 0.5rem;
+  }
+
+  .navLink {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .navItem:hover .navLink {
+    color: #5171ff;
+  }
+
+  /* Underline Effect */
+  .navItem::after {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    height: 2px;
+    background-color: #5171ff;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+  }
+
+  .navItem:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Desktop Dropdown */
+  .dropWrapper {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    z-index: 100;
+  }
+
+  .navItem:hover .dropWrapper {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+
+  /* ⭐ Right buttons with matching min-width */
+  .rightBtns {
+    gap: 2rem;
+    min-width: 200px;
+    justify-content: flex-end;
+  }
+
+  .icon {
+    font-size: 1.6rem;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up)
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .mainNav {
+    padding: 0 5rem;
+  }
+
+  .logoSpacer {
+    min-width: 200px;
+  }
+
+  .list {
+    gap: 2.5rem;
+    margin-left: 3rem;
+  }
+
+  .navLink {
+    font-size: 0.95rem;
+  }
+
+  .rightBtns {
+    min-width: 220px;
+  }
+}
+
+/* ============================================
+   EXTRA LARGE (1440px and up)
+   ============================================ */
+
+@media (min-width: 1440px) {
+  .mainNav {
+    padding: 0 8rem;
+  }
+
+  .logoSpacer {
+    min-width: 220px;
+  }
+
+  .list {
+    gap: 3rem;
+  }
+
+  .rightBtns {
+    min-width: 240px;
+  }
+}
+.viewAllBtn {
+  background-color: #f1f5f9 !important;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.viewAllBtn span {
+  color: #5171ff;
+  font-weight: 500;
+}
+
+.viewAllNested {
+  color: #5171ff;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.mobileNestedItem {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.mobileNestedItem:hover {
+  background-color: #f8fafc;
+}

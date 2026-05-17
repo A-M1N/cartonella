@@ -1,0 +1,556 @@
+/* ==================== CONTAINER ==================== */
+.orderItemsContainer {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(72, 85, 177, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.orderItemsContainer:hover {
+  box-shadow: 0 4px 16px rgba(72, 85, 177, 0.12);
+}
+
+/* ==================== TOP ROW (Order Info) ==================== */
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.columnHeader {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #a2a6b0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.columnValue {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #1e293b;
+  margin: 0;
+}
+
+.linkWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.viewLink {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #5170ff;
+  text-decoration: none;
+  padding: 0.625rem 1.25rem;
+  border: 2px solid #5170ff;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.viewLink:hover {
+  background-color: #4855b1;
+  border-color: #4855b1;
+  color: #ffffff;
+}
+/* ==================== ORDER STATUS IN HEADER ==================== */
+.orderStatus {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  padding: 0.375rem 0.875rem;
+  border-radius: 50px;
+  margin: 0;
+  display: inline-block;
+}
+
+/* ==================== STATUS VARIANTS ==================== */
+.pending {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.confirmed {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.processing {
+  background-color: #e0e7ff;
+  color: #4855b1;
+}
+
+.shipped {
+  background-color: #cffafe;
+  color: #0891b2;
+}
+
+.delivered {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.cancelled {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.refunded {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.onhold {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+/* ==================== ITEM SUBTOTAL ==================== */
+.itemSubtotal {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* ==================== UPDATE labelsHeader for 4 columns ==================== */
+.labelsHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.7fr 1fr;
+  padding: 1rem 1.5rem;
+  background-color: #f5f7ff;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.7fr 1fr;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+/* ==================== RESPONSIVE UPDATES ==================== */
+@media (max-width: 992px) {
+  .labelsHeader {
+    grid-template-columns: 2fr 1fr 0.7fr 1fr;
+    padding: 0.875rem 1rem;
+  }
+
+  .card {
+    grid-template-columns: 2fr 1fr 0.7fr 1fr;
+    padding: 0.875rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .column:nth-child(4) {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .orderStatus {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .column:nth-child(4) {
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+}
+
+/* ==================== LABELS HEADER ==================== */
+.labelsHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 1rem 1.5rem;
+  background-color: #f5f7ff;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4855b1;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==================== ITEMS LIST ==================== */
+.itemsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.card:last-child {
+  border-bottom: none;
+}
+
+.card:hover {
+  background-color: #fafbff;
+}
+
+/* ==================== ITEM INFO (Image + Name) ==================== */
+.itemInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.imgWrapper {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  background-color: #f5f7ff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+}
+
+.itemName {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ==================== ITEM CELLS ==================== */
+.itemCell {
+  display: flex;
+  align-items: center;
+}
+
+.mobileLabel {
+  display: none;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #a2a6b0;
+  margin-right: 0.5rem;
+}
+
+.itemPrice {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #1e293b;
+  margin: 0;
+}
+
+.itemQty {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #64748b;
+  margin: 0;
+}
+
+.itemStatus {
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  padding: 0.375rem 0.875rem;
+  border-radius: 50px;
+  margin: 0;
+  display: inline-block;
+}
+
+/* ==================== STATUS VARIANTS ==================== */
+.pending {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.processing {
+  background-color: #e0e7ff;
+  color: #4855b1;
+}
+
+.shipped {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.delivered {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.cancelled {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.onhold {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+/* ==================== RESPONSIVE STYLES ==================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .orderItemsContainer {
+    padding: 1.25rem;
+  }
+
+  .row {
+    gap: 1rem;
+  }
+
+  .labelsHeader {
+    grid-template-columns: 2fr 1fr 0.8fr 1fr;
+    padding: 0.875rem 1rem;
+  }
+
+  .card {
+    grid-template-columns: 2fr 1fr 0.8fr 1fr;
+    padding: 0.875rem 1rem;
+  }
+
+  .imgWrapper {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .itemName {
+    font-size: 13px;
+  }
+
+  .viewLink {
+    font-size: 13px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 768px) {
+  .orderItemsContainer {
+    padding: 1rem;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .linkWrapper {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .viewLink {
+    width: 100%;
+    text-align: center;
+  }
+
+  .labelsHeader {
+    display: none;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #fafbff;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    border: 1px solid #e2e8f0;
+  }
+
+  .card:last-child {
+    margin-bottom: 0;
+  }
+
+  .card:hover {
+    background-color: #f5f7ff;
+  }
+
+  .itemInfo {
+    width: 100%;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .imgWrapper {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+  }
+
+  .itemName {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .itemCell {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .mobileLabel {
+    display: block;
+  }
+
+  .itemPrice,
+  .itemQty {
+    font-size: 14px;
+  }
+
+  .itemStatus {
+    font-size: 11px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .orderItemsContainer {
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .column {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+
+  .column:last-of-type {
+    border-bottom: none;
+  }
+
+  .columnHeader {
+    font-size: 11px;
+  }
+
+  .columnValue {
+    font-size: 14px;
+  }
+
+  .viewLink {
+    padding: 0.75rem 1rem;
+    font-size: 13px;
+  }
+
+  .itemInfo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .imgWrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .itemCell {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #f1f5f9;
+  }
+
+  .itemCell:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+/* Extra Small */
+@media (max-width: 400px) {
+  .orderItemsContainer {
+    padding: 0.875rem;
+  }
+
+  .columnHeader {
+    font-size: 10px;
+  }
+
+  .columnValue {
+    font-size: 13px;
+  }
+
+  .imgWrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .itemName {
+    font-size: 13px;
+  }
+
+  .mobileLabel {
+    font-size: 11px;
+  }
+
+  .itemPrice,
+  .itemQty {
+    font-size: 13px;
+  }
+}

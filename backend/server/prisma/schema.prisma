@@ -1,0 +1,347 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+enum Role {
+  USER
+  ADMIN
+}
+
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  phone     String?
+  avatar    String?
+  role      Role   @default(USER) // USER, ADMIN
+  googleId  String?  @unique
+
+  //Relations
+  orders    Order[]
+  addresses Address[]
+  reviews   Review[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+}
+
+model Category {
+  id         Int      @id @default(autoincrement())
+  name       String
+  level      Int      @default(1)
+  image      String?
+  slug       String   @unique
+
+  // Self-Referencing Relationship
+  parentId   Int?
+  parent     Category?   @relation("CategoryHierarchy", fields: [parentId], references: [id] )
+  children   Category[]  @relation("CategoryHierarchy")
+
+  //Products in this Category
+
+  products  Product[]
+
+  // For hero cards / featured sections
+  isFeatured  Boolean    @default(false)
+  
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Product {
+  id           Int  @id @default(autoincrement())
+  name         String
+  description  String?
+  price        Float
+  oldPrice     Float?
+  image        String
+  images       String[]
+  stock        Int      @default(0)
+  rating       Float    @default(0)
+  reviewCount  Int      @default(0)
+  featured     Boolean  @default(false)
+  isNew        Boolean  @default(false)
+  onSale       Boolean  @default(false)
+  brand        String?  
+
+  // Relationship to Category (the most specific category - e.g., "Apple" under Laptops)
+  category    Category @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+  
+  //Relationship to OrderItems 
+  orderItems OrderItem[]
+  reviews    Review[]
+
+  //relationship to DailyDeal
+  dailyDeals   DailyDeal[]
+
+
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([brand])
+  @@index([categoryId])
+
+}
+
+// Reviews 
+model Review {
+  id        Int      @id @default(autoincrement())
+  rating    Int      // 1-5
+  title     String?
+  comment   String
+  
+  // Relations
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  productId Int
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  
+  // Verified purchase flag
+  isVerifiedPurchase Boolean @default(false)
+  
+  // Helpful votes
+  helpfulCount Int @default(0)
+  
+  // Admin moderation
+  isApproved Boolean @default(true)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Prevent duplicate reviews
+  @@unique([userId, productId])
+}
+
+// DailyDeal Model 
+model DailyDeal {
+   id              Int       @id @default(autoincrement())
+  
+  // Product relation
+  productId       Int
+  product         Product   @relation(fields: [productId], references: [id], onDelete: Cascade)
+  
+  // Pricing
+  dealPrice       Float
+  originalPrice   Float
+  savings         Float
+  
+  // When this deal is active (one deal per day)
+  activeDate      DateTime  @db.Date
+  
+  // Deal expiration time
+  expiresAt       DateTime
+  
+  // Perks
+  freeShipping    Boolean   @default(false)
+  freeGift        Boolean   @default(false)
+  giftDescription String?
+  
+  // Status
+  isActive        Boolean   @default(true)
+  
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  
+  @@unique([activeDate])  // Only one deal per day
+}
+
+// Collection model (for Hero Cards like Gaming, Technology, Fashion)
+
+model Collection {
+  id           Int      @id @default(autoincrement())
+  name         String
+  slug         String   @unique
+  description  String?
+  image        String?
+  label        String?
+  labelColor   String?
+  titleColor   String?
+  displayOrder Int     @default(0)
+  isActive    Boolean  @default(true)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Address {
+  id          Int      @id @default(autoincrement())
+  label       String?
+  address     String
+  city        String
+  state       String
+  postalCode  String
+  country     String
+  isDefault   Boolean  @default(false)
+
+//Relation with Users. it should be optional for guest checkout
+ userId       Int?
+ user         User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Order {
+  id              Int  @id @default(autoincrement())
+  orderNumber     String      @unique
+
+    // User relation (optional for guest checkout)
+    userId          Int?
+    user            User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  
+     // Contact snapshot
+    shippingFirstName   String
+    shippingLastName    String
+    shippingEmail       String
+    shippingPhone       String
+    shippingAddress     String
+    shippingCity        String
+    shippingState       String
+    shippingPostalCode  String
+    shippingCountry     String
+    
+  // Guest email (for guest checkout)
+  guestEmail      String?
+  
+  // Order Items
+  items           OrderItem[]
+  
+
+
+  // Payment
+  paymentMethod   PaymentMethod
+  paymentStatus   PaymentStatus @default(PENDING)
+  paymentId       String?       // PayPal/Stripe payment ID
+  payerId         String?       // PayPal payer ID
+  
+  // Pricing
+  subtotal        Float
+  shippingFee     Float        @default(0)
+  tax             Float        @default(0)
+  discount        Float        @default(0)
+  total           Float
+  
+  // Coupon
+  couponCode      String?
+  coupon          Coupon?      @relation(fields: [couponCode], references: [code])
+  
+  // Status
+  status          OrderStatus  @default(PENDING)
+  
+  // Timestamps
+  paidAt          DateTime?
+  shippedAt       DateTime?
+  deliveredAt     DateTime?
+  cancelledAt     DateTime?
+  
+  // Tracking
+  trackingNumber  String?
+  trackingUrl     String?
+  
+  // Notes
+  notes           String?
+  adminNotes      String?
+  
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+}
+
+model OrderItem {
+  id          Int      @id @default(autoincrement())
+  
+  // Relation to Order
+  orderId     Int
+  order       Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  
+  // Relation to Product
+  productId   Int
+  product     Product  @relation(fields: [productId], references: [id])
+  
+  // Snapshot of product at time of order (prices can change)
+  name        String
+  image       String
+  price       Float
+  quantity    Int
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  @@unique([orderId, productId])
+}
+
+model Coupon {
+  id              Int         @id @default(autoincrement())
+  code            String      @unique
+  description     String?
+  
+  // Discount type
+  type            CouponType
+  value           Float       // Percentage (0-100) or fixed amount
+  
+  // Limits
+  minOrderAmount  Float?      // Minimum order to apply
+  maxDiscount     Float?      // Maximum discount amount (for percentage)
+  usageLimit      Int?        // Total times coupon can be used
+  usageCount      Int         @default(0)
+  userLimit       Int?        // Times per user
+  
+  // Validity
+  startDate       DateTime    @default(now())
+  endDate         DateTime?
+  isActive        Boolean     @default(true)
+  
+  // Relations
+  orders          Order[]
+  
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+enum PaymentMethod {
+  PAYPAL
+  STRIPE
+  SKRILL
+  GOOGLE_PAY
+  APPLEPAY
+  CREDIT_CARD
+  CASH_ON_DELIVERY
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+  CANCELLED
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  DELIVERED
+  CANCELLED
+}
+
+enum CouponType {
+  PERCENTAGE
+  FIXED
+  FREE_SHIPPING
+}

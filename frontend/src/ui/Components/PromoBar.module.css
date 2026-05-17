@@ -1,0 +1,32 @@
+.promoBar {
+  width: 100%;
+  background: linear-gradient(90deg, #5171ff, #8a9cff);
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+/* Mobile Default */
+.promoTxt {
+  color: white;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+/* Tablet */
+
+@media (min-width: 640px) {
+  .promoBar {
+    padding: 0.5rem 1.5rem;
+  }
+  .promoTxt {
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .promoTxt {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+}

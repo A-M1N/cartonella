@@ -1,0 +1,389 @@
+/* ============================================
+   WHY CHOOSE US - Mobile First
+   ============================================ */
+
+.whyChooseUsSection {
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  flex-direction: column-reverse; /* Text first on mobile */
+  padding: 2rem 1rem;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+/* ============================================
+   DESCRIPTION SECTION (Text Side)
+   ============================================ */
+
+.descriptionSection {
+  width: 100%;
+  padding: 0 0.5rem;
+}
+
+.paragraphChooseUs {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  padding: 0.5rem 0;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.usWord {
+  font-size: inherit;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  color: #5170ff;
+}
+
+.descriptionParagraph {
+  color: #828282;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 1.5rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ============================================
+   IMAGES SECTION - Hidden on mobile
+   ============================================ */
+
+.layoutImagesContainer {
+  display: none;
+}
+
+.imagesWrapper {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+}
+
+.img1Container,
+.img2Container,
+.img3Container,
+.img4Container {
+  display: block;
+}
+
+.image {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .whyChooseUsSection {
+    padding: 3rem 2rem;
+    gap: 2.5rem;
+  }
+
+  .paragraphChooseUs {
+    font-size: 1.75rem;
+  }
+
+  .descriptionParagraph {
+    font-size: 1.05rem;
+    padding-bottom: 2rem;
+  }
+
+  .cardsContainer {
+    gap: 1.25rem;
+  }
+
+  /* Show images on tablet */
+  .layoutImagesContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imagesWrapper {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .img1Container {
+    width: 55%;
+    height: 12rem;
+    padding-bottom: 1rem;
+  }
+
+  .img2Container {
+    width: 40%;
+    height: 10rem;
+    position: absolute;
+    right: 0;
+    transform: rotate(-6deg);
+  }
+
+  .img3Container {
+    width: 48%;
+    height: 10rem;
+  }
+
+  .img4Container {
+    width: 48%;
+    height: 10rem;
+  }
+
+  .image {
+    border-radius: 16px;
+  }
+}
+
+/* ============================================
+   SMALL DESKTOP (1024px and up)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .whyChooseUsSection {
+    flex-direction: row; /* Images LEFT, Text RIGHT */
+    padding: 2rem 2rem;
+    gap: 2rem;
+    min-height: 35rem;
+    align-items: center;
+  }
+
+  .layoutImagesContainer {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imagesWrapper {
+    width: 100%;
+    max-width: 35rem;
+  }
+
+  .img1Container {
+    width: 55%;
+    max-width: 350px;
+    height: 14rem;
+    padding-bottom: 1rem;
+  }
+
+  .img2Container {
+    width: 45%;
+    max-width: 280px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    transform: rotate(-6deg);
+  }
+
+  .img3Container {
+    width: 50%;
+    max-width: 320px;
+    height: 11rem;
+  }
+
+  .img4Container {
+    width: 45%;
+    max-width: 280px;
+    height: 11rem;
+  }
+
+  .descriptionSection {
+    width: 45%;
+    flex-shrink: 0;
+    padding: 1rem;
+  }
+
+  .paragraphChooseUs {
+    font-size: 1.75rem;
+    padding: 0.75rem 0;
+  }
+
+  .descriptionParagraph {
+    font-size: 1rem;
+    padding-bottom: 2rem;
+    line-height: 1.5rem;
+  }
+
+  .image {
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up) - YOUR ORIGINAL LAYOUT
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .whyChooseUsSection {
+    width: 100%;
+    height: 49rem;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 3rem;
+    gap: 0;
+    align-items: center;
+  }
+
+  /* ===== YOUR ORIGINAL IMAGE LAYOUT ===== */
+  .layoutImagesContainer {
+    width: 60%;
+    height: 49rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imagesWrapper {
+    width: 50rem;
+    max-width: 100%;
+    height: 29.5rem;
+  }
+
+  .row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+  }
+
+  .img1Container {
+    display: block;
+    width: 700px;
+    max-width: 50%;
+    height: 20rem;
+    padding-bottom: 1rem;
+  }
+
+  .img2Container {
+    display: block;
+    width: 450px;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    transform: rotate(-6deg);
+  }
+
+  .img3Container {
+    display: block;
+    width: 600px;
+    max-width: 55%;
+    height: 15rem;
+  }
+
+  .img4Container {
+    display: block;
+    width: 500px;
+    max-width: 45%;
+    height: 15rem;
+  }
+
+  .image {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.461);
+  }
+
+  /* ===== TEXT SECTION ===== */
+  .descriptionSection {
+    width: 40%;
+    padding: 2rem;
+  }
+
+  .paragraphChooseUs {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    padding: 1rem 0;
+  }
+
+  .usWord {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    color: #5170ff;
+  }
+
+  .descriptionParagraph {
+    color: #828282;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Inter", sans-serif;
+    padding-bottom: 3rem;
+    line-height: 1.5rem;
+  }
+
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* ============================================
+   EXTRA LARGE (1440px and up)
+   ============================================ */
+
+@media (min-width: 1440px) {
+  .whyChooseUsSection {
+    padding: 2rem 5rem;
+  }
+
+  .imagesWrapper {
+    width: 50rem;
+  }
+
+  .img1Container {
+    width: 700px;
+    max-width: 50%;
+  }
+
+  .img2Container {
+    width: 450px;
+  }
+
+  .img3Container {
+    width: 600px;
+    max-width: 55%;
+  }
+
+  .img4Container {
+    width: 500px;
+    max-width: 45%;
+  }
+}
+
+/* ============================================
+   ULTRA WIDE (1600px and up)
+   ============================================ */
+
+@media (min-width: 1600px) {
+  .whyChooseUsSection {
+    padding: 2rem 8rem;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+}

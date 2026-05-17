@@ -1,0 +1,155 @@
+.section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.container {
+  width: 83.125rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.headerRow:first-child {
+  margin-top: 0;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 0 1.5rem;
+  height: 3rem;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #5170ff;
+  color: white;
+  border-color: #5170ff;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Large Desktop */
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .cardsContainer {
+    gap: 1.25rem;
+  }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+  .cardsContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .cardsContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .btn {
+    height: 2.75rem;
+    padding: 0 1.25rem;
+    font-size: 13px;
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 768px) {
+  .section {
+    padding: 1rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .cardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    height: 2.75rem;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .headerRow {
+    margin-top: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .cardsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .btn {
+    height: 2.5rem;
+    font-size: 13px;
+    border-radius: 6px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .btn {
+    height: 2.75rem;
+  }
+}

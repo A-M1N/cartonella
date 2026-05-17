@@ -1,0 +1,49 @@
+.btn {
+  border: 1px solid #cacdd8;
+  background-color: #f5f7ff;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: "Poppins";
+  font-weight: 600;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  border-color: #5170ff;
+  background-color: #eef1ff;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 0.4rem 1rem;
+    font-size: 12px;
+  }
+
+  .imgContainer {
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -1,0 +1,152 @@
+/* ============================================
+   OUR PRODUCTS SECTION - Mobile First
+   Aligned with BestSelling & Categories (max-width: 85rem)
+   ============================================ */
+
+.ourProductsContainer {
+  width: 100%;
+  max-width: 85rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  padding-top: 2.5rem;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  justify-items: center;
+}
+
+.viewAllBtn {
+  display: block;
+  margin: 2rem auto 0 auto;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background-color: #5170ff;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 200px;
+  padding: 0.875rem 1.5rem;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.viewAllBtn:hover {
+  background-color: #3957d1;
+  transform: translateY(-2px);
+}
+
+.viewAllBtn:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   SMALL MOBILE (480px and up)
+   ============================================ */
+
+@media (min-width: 480px) {
+  .ourProductsContainer {
+    padding: 2rem 1.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .viewAllBtn {
+    font-size: 15px;
+    max-width: 220px;
+  }
+}
+
+/* ============================================
+   TABLET (768px and up)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .ourProductsContainer {
+    padding: 2.5rem 2rem;
+    padding-top: 3rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .viewAllBtn {
+    font-size: 15px;
+    max-width: 230px;
+    padding: 1rem 2rem;
+    margin-top: 2.5rem;
+  }
+}
+
+/* ============================================
+   DESKTOP (1024px and up)
+   ============================================ */
+
+@media (min-width: 1024px) {
+  .ourProductsContainer {
+    padding: 3rem;
+    padding-top: 3.5rem;
+  }
+
+  .row {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
+    justify-items: stretch;
+  }
+
+  .viewAllBtn {
+    font-size: 16px;
+    max-width: 240px;
+  }
+}
+
+/* ============================================
+   LARGE DESKTOP (1280px and up)
+   ============================================ */
+
+@media (min-width: 1280px) {
+  .ourProductsContainer {
+    padding: 3rem 0;
+    padding-top: 4rem;
+  }
+
+  .row {
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .viewAllBtn {
+    width: 14.625rem;
+    padding: 0.875rem 2rem;
+    margin-top: 3rem;
+  }
+}
+
+/* ============================================
+   EXTRA LARGE (1440px and up)
+   ============================================ */
+
+@media (min-width: 1440px) {
+  .ourProductsContainer {
+    max-width: 90rem; /* ✅ Match other sections */
+  }
+
+  .row {
+    gap: 2.5rem;
+  }
+}
