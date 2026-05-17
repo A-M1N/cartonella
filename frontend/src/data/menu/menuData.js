@@ -72,7 +72,7 @@ import antivirus from "../lists-icons/antivirus.jpg";
 import office from "../lists-icons/office.png";
 import vpn from "../lists-icons/proton.png";
 
-import subscriptions from "../lists-icons/spotifyLogo.png";
+import subscriptions from "../lists-icons/SpotifyLogo.png";
 
 import spotify from "../lists-icons/spotify.jpeg";
 import netflix from "../lists-icons/netflix.png";
