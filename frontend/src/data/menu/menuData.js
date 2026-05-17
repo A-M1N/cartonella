@@ -91,7 +91,7 @@ import dress from "../lists-icons/dress.png";
 import skirt from "../lists-icons/skirt.png";
 import tshirts from "../lists-icons/tshirt.png";
 
-import kids from "../lists-icons/kids.png";
+import kids from "../icons/kids.png";
 
 import caps from "../lists-icons/caps.png";
 import tshirtskids from "../lists-icons/tshirtkids.png";
