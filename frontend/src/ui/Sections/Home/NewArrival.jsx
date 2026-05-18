@@ -4,6 +4,7 @@ import perfume from "../../../data/perfume.svg";
 import speakers from "../../../data/speakers.svg";
 import styles from "../Home/NewArrival.module.css";
 import SectionIntro from "../../Components/SectionIntro";
+import { Link } from "react-router";
 
 export default function NewArrival() {
   return (
