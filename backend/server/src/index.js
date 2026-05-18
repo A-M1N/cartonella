@@ -31,14 +31,14 @@ app.use(
   express.raw({ type: "application/json" })
 );
 
-app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://cartonella.vercel.app/"],
+    origin: ["http://localhost:5173", "https://cartonella.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
-
+app.use(express.json());
 //app.use(globalLimiter);
 //app.use("/api/auth", authLimiter);
 
