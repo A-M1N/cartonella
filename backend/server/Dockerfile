@@ -1,14 +1,17 @@
-FROM node:22-alpine
+FROM node:22-slim
 
 WORKDIR /app
+
+
+RUN apt-get update && apt-get install -y openssl
 
 COPY package*.json ./
 RUN npm install
 
-COPY . . 
+COPY . .
 
-RUN npx prisma generate 
+# Prisma
+RUN npx prisma generate
 
 EXPOSE 5000
-
-CMD ["node", "src/index.js"]
+CMD ["npm", "start"]
