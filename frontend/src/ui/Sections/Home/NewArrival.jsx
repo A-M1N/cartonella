@@ -22,9 +22,12 @@ export default function NewArrival() {
             <p className={styles.cardParagraph}>
               Black and White version of the PS5 coming out on sale.
             </p>
-            <a href="/products?category=playstation" className={styles.shopNow}>
+            <Link
+              className={styles.shopNow}
+              to="/products?category=pc-components"
+            >
               Shop Now
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -40,12 +43,12 @@ export default function NewArrival() {
               <p className={styles.cardParagraph}>
                 Featured woman collections that give you another vibe.
               </p>
-              <a
-                href="/products?category=womens-clothing"
+              <Link
                 className={styles.shopNow}
+                to="/products?category=womens-clothing"
               >
                 Shop Now
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -59,12 +62,12 @@ export default function NewArrival() {
               <div className={styles.cardContent}>
                 <h4 className={styles.cardTitle}>Speakers</h4>
                 <p className={styles.cardParagraph}>Amazon wireless speakers</p>
-                <a
-                  href="/products?category=speakers"
+                <Link
                   className={styles.shopNow}
+                  to="/products?category=pc-headset"
                 >
                   Shop Now
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -77,12 +80,12 @@ export default function NewArrival() {
               <div className={styles.cardContent}>
                 <h4 className={styles.cardTitle}>Perfumes</h4>
                 <p className={styles.cardParagraph}>GUCCI INTENSE OUD EDP</p>
-                <a
-                  href="/products?category=perfumes"
+                <Link
                   className={styles.shopNow}
+                  to="/products?category=perfumes"
                 >
                   Shop Now
-                </a>
+                </Link>
               </div>
             </div>
           </div>
