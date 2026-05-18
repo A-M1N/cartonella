@@ -87,11 +87,7 @@ export default function ProductsGrid({ viewMode, setViewMode }) {
             <CardItemList
               key={product.id}
               id={product.id}
-              image={
-                product.image.startsWith("http")
-                  ? product.image
-                  : `${API_URL}${product.image}`
-              }
+              image={product.image.startsWith("http") ? product.image : ""}
               title={product.name}
               description={product.description}
               price={product.price}
